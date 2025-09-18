@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacefactor.ai - Our Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 2px solid #DAA520;
+            box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #DAA520, #FFD700, #FFA500);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+            animation: gradientShift 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 70%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="0.5" fill="%23DAA520" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #DAA520, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(218, 165, 32, 0.6);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 40px rgba(218, 165, 32, 0.6); }
+            to { text-shadow: 0 0 60px rgba(218, 165, 32, 0.8), 0 0 80px rgba(255, 215, 0, 0.4); }
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 2px solid #DAA520;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px auto 60px;
+            max-width: 800px;
+            box-shadow: 
+                0 0 30px rgba(218, 165, 32, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .message-box p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Button Styles */
+        .demo-buttons {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .demo-btn {
+            display: inline-block;
+            padding: 18px 35px;
+            background: linear-gradient(45deg, #DAA520, #FFD700);
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #DAA520;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: flash 2s ease-in-out infinite;
+        }
+
+        @keyframes flash {
+            0%, 50%, 100% { 
+                box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
+                transform: scale(1);
+            }
+            25%, 75% { 
+                box-shadow: 0 0 40px rgba(218, 165, 32, 0.9), 0 0 60px rgba(255, 215, 0, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        .demo-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(218, 165, 32, 1);
+            animation-play-state: paused;
+        }
+
+        .demo-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .demo-btn:hover::before {
+            left: 100%;
+        }
+
+        .coaching-btn {
+            animation-delay: 0s;
+        }
+
+        .finance-btn {
+            animation-delay: 1s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .message-box {
+                padding: 30px 20px;
+                margin: 30px auto 40px;
+            }
+
+            .message-box p {
+                font-size: 1.1rem;
+            }
+
+            .demo-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .demo-btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #DAA520, transparent);
+            margin: 20px auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; width: 100px; }
+            50% { opacity: 1; width: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">pacefactor.ai</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Portfolio</h1>
+                <div class="decorative-line"></div>
+                
+                <div class="message-box">
+                    <p>Welcome to our showcase of excellence. These are carefully curated samples of the premium websites we have delivered to our valued clients. Each project represents our commitment to cutting-edge design, seamless functionality, and exceptional user experience. Explore our work and discover how we can transform your digital presence.</p>
+                </div>
+
+                <div class="demo-buttons">
+                    <a href="https://jjca.netlify.app" target="_blank" class="demo-btn coaching-btn">
+                        🎓 Coaching Academy Demo
+                    </a>
+                    <a href="https://wealthscape-visions.vercel.app" target="_blank" class="demo-btn finance-btn">
+                        💼 Financial Consulting Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
